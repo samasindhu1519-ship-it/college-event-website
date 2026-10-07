@@ -1,0 +1,336 @@
+/* General Settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+
+/* Navigation Bar */
+
+header {
+    background-color: #172554;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    font-size: 20px;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #93c5fd;
+}
+
+
+/* Hero Section */
+
+.hero {
+    min-height: 550px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color: white;
+
+    padding: 40px 20px;
+}
+
+.hero-content h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.hero-content .date {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+/* Buttons */
+
+.btn,
+button {
+    display: inline-block;
+
+    background-color: #fbbf24;
+    color: #111827;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+.btn:hover,
+button:hover {
+    background-color: #f59e0b;
+}
+
+
+/* Common Section */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #172554;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.section > p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+
+/* Cards */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.event-card button {
+    margin-top: 15px;
+}
+
+
+/* Schedule Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    margin-top: 30px;
+
+    background-color: white;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+th {
+    background-color: #172554;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #eef2ff;
+}
+
+
+/* Registration Form */
+
+form {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    text-align: left;
+}
+
+form label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+form input,
+form select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+.submit-btn {
+    width: 100%;
+
+    margin-top: 25px;
+}
+
+#formMessage {
+    font-weight: bold;
+    color: green;
+}
+
+
+/* Contact */
+
+.contact {
+    background-color: #e0e7ff;
+
+    max-width: 100%;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contact p {
+    margin: 10px;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #172554;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* Mobile Responsive Design */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,31 @@
+atabase.py - SQLite Database & Persistence Layer for FreelanceFlow
+Uses Python standard library sqlite3 for zero external dependencies.
+"""
+import sqlite3
+import json
+import os
+from datetime import datetime, timedelta
+DB_PATH = os.path.join(os.path.dirname(__file__), "freelanceflow.db")
+def get_connection():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
+    return conn
+def init_db():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.executescript("""
+    CREATE TABLE IF NOT EXISTS users (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        role TEXT NOT NULL, -- 'client', 'freelancer', 'admin'
+        avatar TEXT,
+        headline TEXT,
+        bio TEXT,
+        skills TEXT, -- JSON array of strings
+        hourly_rate REAL DEFAULT 0.0,
+        rating REAL DEFAULT 5.0,
+        completed_projects INTEGER DEFAULT 0,
+        created_at TEXT
+    );
